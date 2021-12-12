@@ -3,7 +3,7 @@ import Head from "next/head";
 import Image from "next/image";
 import styles from "../styles/Home.module.css";
 
-//export const getStaticProps: GetStaticProps = async (context) => {};
+// export const getStaticProps: GetStaticProps = async (context) => {};
 
 export default function Home() {
   return (
