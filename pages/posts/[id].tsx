@@ -1,5 +1,6 @@
 import { GetStaticPaths, GetStaticProps } from "next";
 import * as fs from "fs";
+import { MDXProvider } from "@mdx-js/react";
 
 const getAllPostIds = () => {
   const fileNames = fs.readdirSync("./posts");
@@ -22,7 +23,11 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
 };
 
 const Post = (): JSX.Element => {
-  return <div>post</div>;
+  return (
+    <MDXProvider>
+      <div>post</div>
+    </MDXProvider>
+  );
 };
 
 export default Post;
