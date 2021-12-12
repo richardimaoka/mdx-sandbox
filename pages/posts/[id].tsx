@@ -23,8 +23,10 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
 };
 
 const Post = (): JSX.Element => {
+  const components = {};
+
   return (
-    <MDXProvider>
+    <MDXProvider components={components}>
       <div>post</div>
     </MDXProvider>
   );
