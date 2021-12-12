@@ -5,17 +5,18 @@ const getAllPostIds = () => {
   const fileNames = fs.readdirSync("./posts");
 
   return fileNames.map((fileName) => {
-    return { params: { id: fileName } };
+    return { params: { id: fileName.replace(/\.md$/, "") } };
   });
 };
 
-export const getStaticPaths: GetStaticPaths = () => {
+export const getStaticPaths: GetStaticPaths = async () => {
   console.log("getStaticPaths is called");
   const paths = getAllPostIds();
+  console.log(paths);
   return { paths, fallback: false };
 };
 
-export const getStaticProps: GetStaticProps = ({ params }) => {
+export const getStaticProps: GetStaticProps = async ({ params }) => {
   console.log("getStaticProps is called");
   return { props: {} };
 };
